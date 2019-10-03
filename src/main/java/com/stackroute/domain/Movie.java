@@ -5,12 +5,11 @@ public class Movie {
 
 
 
-    private String movieName;
-    private String actorName;
-    public void setMovieName(String movieName) {
+    String movieName;
+    Actor actorName;
+
+    public Movie(String movieName, Actor actorName) {
         this.movieName = movieName;
-    }
-    public void setActorName(String actorName) {
         this.actorName = actorName;
     }
 

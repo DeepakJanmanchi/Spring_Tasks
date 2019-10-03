@@ -6,17 +6,32 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <!-- A simple bean definition -->
-    <bean id = "actor" class = "com.stackroute.domain.Actor">
+    <bean id = "actor1" class = "com.stackroute.domain.Actor">
         <!-- collaborators and configuration for this bean go here -->
-        <property name="age" value="22" />
-        <property name="gender" value="Male" />
-        <property name="name" value="Deepak"/>
+        <constructor-arg index="0" value="Deepak"/>
+        <constructor-arg index="1" value="Male"/>
+        <constructor-arg index="2" value="22"/>
+
+    </bean>
+
+    <bean id = "actor2" class = "com.stackroute.domain.Actor">
+        <!-- collaborators and configuration for this bean go here -->
+        <constructor-arg index="0" value="Roopak"/>
+        <constructor-arg index="1" value="Male"/>
+        <constructor-arg index="2" value="92"/>
+
+    </bean>
+
+    <bean id = "actor3" class = "com.stackroute.domain.Actor">
+        <!-- collaborators and configuration for this bean go here -->
+        <constructor-arg index="0" value="Caprio"/>
+        <constructor-arg index="1" value="Male"/>
+        <constructor-arg index="2" value="52"/>
+
     </bean>
     <bean id = "movie" class = "com.stackroute.domain.Movie">
-        <!-- collaborators and configuration for this bean go here -->
-        <property name="movieName" value="Pichekistha" />
-        <property name="actorName" value="Deepak" />
-
+        <constructor-arg index="0" value="bahubali"/>
+        <constructor-arg index="1" ref="actor1"/>
     </bean>
 
 
