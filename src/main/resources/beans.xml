@@ -1,40 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans.xsd
-   http://www.springframework.org/schema/context
-   http://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- A simple bean definition -->
-    <context:annotation-config> </context:annotation-config>
-    <bean id = "actor1" class = "com.stackroute.domain.Actor">
-        <!-- collaborators and configuration for this bean go here -->
-        <constructor-arg index="0" value="Deepak"/>
-        <constructor-arg index="1" value="Male"/>
-        <constructor-arg index="2" value="22"/>
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="actorObject" class="com.stackroute.domain.Actor">
+        <property name="name" value="Tarak9999"/>
+        <property name="gender" value="Male"/>
+        <property name="age" value="34"/>
     </bean>
 
-    <bean id = "actor2" class = "com.stackroute.domain.Actor">
-        <!-- collaborators and configuration for this bean go here -->
-        <constructor-arg index="0" value="Roopak"/>
-        <constructor-arg index="1" value="Male"/>
-        <constructor-arg index="2" value="92"/>
-
+    <bean id="movie" class="com.stackroute.domain.Movie">
+        <property name="actor" ref="actorObject"/>
     </bean>
-
-    <bean id = "actor3" class = "com.stackroute.domain.Actor">
-        <!-- collaborators and configuration for this bean go here -->
-        <constructor-arg index="0" value="Caprio"/>
-        <constructor-arg index="1" value="Male"/>
-        <constructor-arg index="2" value="52"/>
-
-    </bean>
-    <bean id = "movie" class = "com.stackroute.domain.Movie" autowire="byName">
-        <constructor-arg index="0" value="bahubali"/>
-
-
-    </bean>
-
-
-
 </beans>

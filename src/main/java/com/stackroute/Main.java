@@ -1,22 +1,25 @@
 package com.stackroute;
 
-import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
+import org.springframework.beans.factory.support.BeanDefinitionReader;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.sql.SQLOutput;
+import org.springframework.core.io.ClassPathResource;
 
 public class Main {
-    public static void main(String args[]){
-        ApplicationContext con = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie = (Movie) con.getBean("movie", Movie.class);
-        movie.displayMovieInfo();
-        Actor actor1 = con.getBean("actor1", Actor.class);
-        Actor actor2 = con.getBean("actor2", Actor.class);
-        Actor actor3 = con.getBean("actor3", Actor.class);
-        System.out.println(actor1.toString());
-        System.out.println(actor2.toString());
-        System.out.println(actor3.toString());
+    public static void main(String[] args) {
+        System.out.println("ApplicationContext Method");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie1 = context.getBean("movie",Movie.class);
+        System.out.println(movie1.toString());
+        System.out.println("BeansFactory Method");
+        XmlBeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
+        Movie movie = beanFactory.getBean("movie",Movie.class);
+        System.out.println(movie.toString());
+
+
+
     }
 }
