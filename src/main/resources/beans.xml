@@ -5,7 +5,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
+    <bean id="BeanLifeCycleDemo" class="com.stackroute.domain.BeanLifecycleDemoBean">
+        <property name="message" value="property message" />
+    </bean>
     <bean id="actorObject" class="com.stackroute.domain.Actor">
         <property name="name" value="Tarak9999"/>
         <property name="gender" value="Male"/>
