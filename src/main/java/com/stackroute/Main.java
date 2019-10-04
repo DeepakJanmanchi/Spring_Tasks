@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.domain.BeanLifecycleDemoBean;
+import com.stackroute.domain.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -22,9 +23,9 @@ public class Main {
         System.out.println(movie.toString());
         ConfigurableApplicationContext con =
                 new ClassPathXmlApplicationContext(new String[] {"beans.xml"});
-        BeanLifecycleDemoBean bee = (BeanLifecycleDemoBean) con.getBean("BeanLifeCycleDemo");
+        BeanPostProcessorDemoBean bee = (BeanPostProcessorDemoBean) con.getBean("hello");
 
-        System.out.println(bee);
+        bee.getMessage();
 
 
 

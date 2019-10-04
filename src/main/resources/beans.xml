@@ -5,8 +5,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    <bean id="BeanLifeCycleDemo" class="com.stackroute.domain.BeanLifecycleDemoBean">
-        <property name="message" value="property message" />
+    <bean id = "hello" class = "com.stackroute.domain.BeanPostProcessorDemoBean"
+          init-method = "init" destroy-method = "destroy">
+        <property name = "message" value = "Hello World!"/>
     </bean>
     <bean id="actorObject" class="com.stackroute.domain.Actor">
         <property name="name" value="Tarak9999"/>
